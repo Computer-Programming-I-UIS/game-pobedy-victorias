@@ -17,9 +17,17 @@ class Bullet{
  void update(){
   if(tp && player.alive){
     pos.y = pos.y - speed;
-   ellipse(pos.x, pos.y, 10, 10);
+    if(plsprite==0){
+      rect(pos.x-15,pos.y+15,5,5);
+      rect(pos.x+15,pos.y+15,5,5);
+    }else if(plsprite==1){
+      rect(pos.x,pos.y,5,5);
+    }
+    
+   
     }else if(!tp && player.alive){
       pos.y = pos.y + speed;
+      
       rect(pos.x,pos.y,5,10);
     }
    if (pos.x > 0 && pos.x < width && pos.y > 0 && pos.y < height) {

@@ -3,7 +3,7 @@ class Player{
   boolean left=false,right=false,up=false,down=false, alive=true;
   int vel2d=5;
   int w=0;
-  int lives=5;
+  int lives=3;
   int size=50;
   float score=0.0;
   int status=0;
@@ -11,8 +11,14 @@ class Player{
    pos2d = new PVector(375,500);
  }
  void play(){
-   if(level==1 && alive){
+   if(level==0 && alive){
       image(pl[plsprite],pos2d.x,pos2d.y,50,64.28);
+      if(plsprite==1){
+        turbin[turbinid].display(player.pos2d.x,player.pos2d.y+25);
+      }else if(plsprite==0){
+        turbin[turbinid].display(player.pos2d.x-25,player.pos2d.y+40);
+        turbin[turbinid].display(player.pos2d.x+25,player.pos2d.y+40);
+      }
    
  }
  }
@@ -38,7 +44,10 @@ class Player{
   }
      if(!alive){
       anim.display(player.pos2d.x,player.pos2d.y);
-      
+      left=false;
+      right=false;
+      up=false;
+      down=false;
       w=w+1;
       if(w==100){
        alive=true;

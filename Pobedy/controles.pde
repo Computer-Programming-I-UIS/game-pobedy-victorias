@@ -36,7 +36,7 @@ void keyPressed(){
 
    
  }
- }else if(window == 4){
+ }else if(window == 4 && !victory[level]){
    switch(keyCode){
     case 'P':
     case 'p':

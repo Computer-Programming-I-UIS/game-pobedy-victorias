@@ -1,6 +1,7 @@
 void prechargeGraphics(){
  pl = new PImage[3];
  en = new PImage[2];
+ turbin = new spriteAnim[10];
  menup = loadImage("data/menup.png");
  about = loadImage("data/about.png");
  live = loadImage("data/gameplay/live.png");
@@ -9,30 +10,42 @@ void prechargeGraphics(){
  en[0] = loadImage("data/gameplay/enemy1.png");
  en[1] = loadImage("data/gameplay/enemy2.png");
  anim = new spriteAnim("data/gameplay/boom/boom", 12);
+ turbin[0] = new spriteAnim("data/gameplay/turbin1/turbin",11);
+ turbin[1] = new spriteAnim("data/gameplay/turbin2/turbin",15);
  prechargeButtons();
   
 }
 void prechargeButtons(){
   btn = new mButton[7];
   pbtn = new mButton[2];
+  tbtn = new mButton[2];
   for(int i=0;i<pbtn.length;i++){
-    pbtn[i]=new mButton(i,true);
+    pbtn[i]=new mButton(i,true,false);
+    tbtn[i]=new mButton(i,false, true);
   }
   for(int i=0;i<btn.length;i++){
-   btn[i] = new mButton(i,false);
+   btn[i] = new mButton(i,false,false);
   }
   
 }
 void prechargeGameplay(){
  player = new Player();
- cen = new callEnemy();
+ victory = new boolean[maxlevel];
  enm = new Enemy[enemy[0]][enemy[1]];
  bullets = new ArrayList<Bullet>(); 
- for(int i=0;i<enemy[0];i++){
+ for(int i=0;i<maxlevel;i++){
+  victory[i]=false; 
+ }
+createEnemies();
+}
+void createEnemies(){
+  for(int i=0;i<enemy[0];i++){
       for(int j=0;j<enemy[1];j++){
          enm[i][j] = new Enemy(50*(1+i),50*(1+j)); 
+         enm[i][j].alive = true;
       }
- }
+ } 
+ cen = new callEnemy();
 }
 void prechargeSounds(){
  minim = new Minim(this);

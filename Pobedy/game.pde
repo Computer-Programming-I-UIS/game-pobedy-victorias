@@ -1,9 +1,11 @@
 void loadGamePlay(){
+  if(level==0){
   disableNoGameSounds();
   background(#24FFEB);
   text("Vidas:",550,50);
   text("Puntaje:   "+player.score,550,100);
-   btn[5].backplace(500,500,5);
+   btn[5].backplace(600,400,5, "Pausar");
+   btn[4].backplace(600,200,4, "Menú");
   
   for(int i=0;i<player.lives;i++){
     image(live,600+30*i,35,25,25);
@@ -18,11 +20,20 @@ void loadGamePlay(){
 cen.EnemyPlace();
 cen.disparar();
 cen.update();
+  }
 }
 void gamePaused(){
   
-  btn[5].backplace(500,500,6);
   
+  btn[4].backplace(600,200,4, "Menú");
+  if(victory[level] && level<maxlevel){
+  fill(#FFFFFF);
+  rect(250,250,300,100);
+  fill(0);
+  text("Victoria!", 300,275);
+}else if(!victory[level]){
+  btn[5].backplace(600,400,6, "Jugar");
+}
 }
 void disableNoGameSounds(){
  if(s[10].isPlaying()){

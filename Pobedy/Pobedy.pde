@@ -1,14 +1,16 @@
   
 import ddf.minim.*;
 
-int window = 0,level=0, b,ss, plsprite=1, frame;
+int window = 0,level=0,maxlevel=1, b,ss, plsprite=1, frame, turbinid=1;
 int enemy[] ={5,6};
 ArrayList<Bullet> bullets;
 PImage[] pl, en;
 spriteAnim anim;
+spriteAnim[] turbin;
 Minim minim;
 AudioPlayer[] s;
-mButton[] btn, pbtn;
+boolean[] victory;
+mButton[] btn, pbtn, tbtn;
 Enemy[][] enm;
 callEnemy cen;
 PImage menup, about, live;
