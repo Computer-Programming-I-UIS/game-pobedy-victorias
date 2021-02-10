@@ -1,7 +1,8 @@
 void loadGamePlay(){
   if(level==0){
   disableNoGameSounds();
-  background(#24FFEB);
+  background(0);
+  image(fondo,0,0,600,600);
   text("Vidas:",550,50);
   text("Puntaje:   "+player.score,550,100);
    btn[5].backplace(600,400,5, "Pausar");

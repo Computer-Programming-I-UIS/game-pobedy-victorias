@@ -97,6 +97,7 @@ class mButton{
          bullets.clear();
          player.pos2d.x=375;
          player.pos2d.y=500;
+         victory[ level ] = false;
      }else if(bid==1){
          window=2;
      }else if(bid==2){
@@ -150,7 +151,15 @@ class mButton{
        s[7].play();
        }
      }else if(bid==2){
-      window=3;
+             if(image && !tanim){
+         plsprite=2;
+       s[6].rewind();
+       s[6].play();
+       }else if(tanim){
+         turbinid=0;
+       s[6].rewind();
+       s[6].play();
+       }
      }else if(bid==3){
       exit(); 
      }else if(bid==4){

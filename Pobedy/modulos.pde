@@ -1,14 +1,17 @@
 void prechargeGraphics(){
  pl = new PImage[3];
- en = new PImage[2];
+ en = new PImage[3];
  turbin = new spriteAnim[10];
  menup = loadImage("data/menup.png");
+ fondo = loadImage("data/sound/fondo.jpg");
  about = loadImage("data/about.png");
  live = loadImage("data/gameplay/live.png");
  pl[0] = loadImage("data/gameplay/pl1.png"); 
  pl[1] = loadImage("data/gameplay/pl2.png");
+ pl[2] = loadImage("data/gameplay/pl3.png");
  en[0] = loadImage("data/gameplay/enemy1.png");
  en[1] = loadImage("data/gameplay/enemy2.png");
+ en[2] = loadImage("data/gameplay/enemy3.png");
  anim = new spriteAnim("data/gameplay/boom/boom", 12);
  turbin[0] = new spriteAnim("data/gameplay/turbin1/turbin",11);
  turbin[1] = new spriteAnim("data/gameplay/turbin2/turbin",15);
@@ -17,12 +20,15 @@ void prechargeGraphics(){
 }
 void prechargeButtons(){
   btn = new mButton[7];
-  pbtn = new mButton[2];
+  pbtn = new mButton[3];
   tbtn = new mButton[2];
   for(int i=0;i<pbtn.length;i++){
     pbtn[i]=new mButton(i,true,false);
-    tbtn[i]=new mButton(i,false, true);
+   
   }
+  for(int i = 0; i<tbtn.length;i++){
+     tbtn[i]=new mButton(i,false, true);
+   }
   for(int i=0;i<btn.length;i++){
    btn[i] = new mButton(i,false,false);
   }

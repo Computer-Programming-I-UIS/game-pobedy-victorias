@@ -13,7 +13,7 @@ boolean[] victory;
 mButton[] btn, pbtn, tbtn;
 Enemy[][] enm;
 callEnemy cen;
-PImage menup, about, live;
+PImage menup, about, live, fondo; 
 boolean win=false, canpresume=true;
 Player player;
 void setup(){

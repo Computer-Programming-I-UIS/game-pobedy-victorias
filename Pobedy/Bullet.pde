@@ -23,6 +23,9 @@ class Bullet{
     }else if(plsprite==1){
       rect(pos.x,pos.y,5,5);
     }
+    else if(plsprite==2){
+    rect(pos.x,pos.y,3,3);
+    }
     
    
     }else if(!tp && player.alive){

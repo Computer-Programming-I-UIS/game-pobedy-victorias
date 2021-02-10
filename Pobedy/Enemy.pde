@@ -2,7 +2,7 @@ class Enemy{
   PVector pos;
   int size = 30;
   int w=0;
-  int enemysprite = round(random(0,1));
+  int enemysprite = round(random(0,2));
   boolean alive = true,showdeath=true;
   Enemy(int px,int py){
     pos = new PVector(px,py);

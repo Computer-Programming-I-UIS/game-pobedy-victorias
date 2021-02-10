@@ -19,6 +19,9 @@ class Player{
         turbin[turbinid].display(player.pos2d.x-25,player.pos2d.y+40);
         turbin[turbinid].display(player.pos2d.x+25,player.pos2d.y+40);
       }
+      else {
+      turbin[turbinid].display(player.pos2d.x,player.pos2d.y+25);
+      }
    
  }
  }
