@@ -1,8 +1,10 @@
   
 import ddf.minim.*;
 
+
 int window = 0,level=0,maxlevel=1, b,ss, plsprite=1, frame, turbinid=1;
-int enemy[] ={5,6};
+int enemy[] ={6,6};
+float autopos[][];
 ArrayList<Bullet> bullets;
 PImage[] pl, en;
 spriteAnim anim;
@@ -14,7 +16,7 @@ mButton[] btn, pbtn, tbtn;
 Enemy[][] enm;
 callEnemy cen;
 PImage menup, about, live, fondo; 
-boolean win=false, canpresume=true;
+boolean win=false, canpresume=true,gameover=false;
 Player player;
 void setup(){
  size(800,600);

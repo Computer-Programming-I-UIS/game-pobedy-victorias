@@ -3,7 +3,7 @@ class Player{
   boolean left=false,right=false,up=false,down=false, alive=true;
   int vel2d=5;
   int w=0;
-  int lives=3;
+  int lives=1;
   int size=50;
   float score=0.0;
   int status=0;
@@ -20,7 +20,7 @@ class Player{
         turbin[turbinid].display(player.pos2d.x+25,player.pos2d.y+40);
       }
       else {
-      turbin[turbinid].display(player.pos2d.x,player.pos2d.y+25);
+      turbin[turbinid].display(player.pos2d.x,player.pos2d.y+50);
       }
    
  }
@@ -35,14 +35,14 @@ class Player{
  }
  void update(){
  //Controles de usuario
-  if(left){
+  if(left && pos2d.x>20){
    moveh(-1); 
-  }else if(right){
+  }else if(right && pos2d.x<450.0){
    moveh(1); 
   }
-  if(up){
+  if(up && player.pos2d.y>420){
    movev(-1); 
-  }else if(down){
+  }else if(down && pos2d.y<530){
    movev(1); 
   }
      if(!alive){

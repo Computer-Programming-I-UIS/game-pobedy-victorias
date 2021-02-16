@@ -51,6 +51,7 @@ class mButton{
         
    }
   void place(){
+    noStroke();
     fill(#FFFFFF);
    rect(pos.x,pos.y,100,30,50,50,50,50); 
    fill(0);
@@ -68,6 +69,7 @@ class mButton{
   void animplace(){
     if(turbinid==bid){
       noFill();
+      stroke(0);
       rect(pos.x-1,pos.y-1,51,51);
     }
     turbin[bid].display(pos.x,pos.y);
@@ -89,15 +91,7 @@ class mButton{
    if(mouseInLeftC(pos.x,pos.y,pos.x+100,pos.y+30)){
      
      if(bid==0){
-         window=1;
-         createEnemies();
-         player.score = 0;
-         player.lives = 3;
-         level = 0;
-         bullets.clear();
-         player.pos2d.x=375;
-         player.pos2d.y=500;
-         victory[ level ] = false;
+        gamestart();
      }else if(bid==1){
          window=2;
      }else if(bid==2){

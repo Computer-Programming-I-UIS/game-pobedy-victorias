@@ -21,7 +21,7 @@ void keyPressed(){
    case 'd':
    case 'D':
    case RIGHT:
-     player.right=true;
+    player.right=true;
      break;
    case ' ':
      bullets.add( new Bullet(player.pos2d.x,player.pos2d.y,true));
@@ -36,7 +36,7 @@ void keyPressed(){
 
    
  }
- }else if(window == 4 && !victory[level]){
+ }else if(window == 4 && !victory[level] && !gameover){
    switch(keyCode){
     case 'P':
     case 'p':

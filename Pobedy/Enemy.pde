@@ -36,7 +36,7 @@ class Enemy{
   
 }
 class callEnemy{
-  int enmspeed = 1, bajas=0;
+  int enmspeed = 2, bajas=0;
   PVector pos;
   float pr, prshoot=0.051;
   callEnemy(){
@@ -70,7 +70,8 @@ class callEnemy{
      win=true; 
     }
     if(player.lives<=0){
-     window=10; // Game Over
+     window=4; // Game Over
+     gameover=true;
     }if(player.score==enemy[0]*enemy[1]){
      window=4;
      victory[0]=true;
@@ -91,7 +92,7 @@ class callEnemy{
                 }
                 
                 
-                if((enm[i][j].pos.x + enm[i][j].size > width-250 || enm[i][j].pos.x - enm[i][j].size < 0)) {
+                if((enm[i][j].pos.x + enm[i][j].size > width-300 || enm[i][j].pos.x - enm[i][j].size < 0)) {
                     borde = true;
                 }
             }

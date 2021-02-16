@@ -37,6 +37,7 @@ void prechargeButtons(){
 void prechargeGameplay(){
  player = new Player();
  victory = new boolean[maxlevel];
+ autopos = new float[20][2];
  enm = new Enemy[enemy[0]][enemy[1]];
  bullets = new ArrayList<Bullet>(); 
  for(int i=0;i<maxlevel;i++){
