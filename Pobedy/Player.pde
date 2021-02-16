@@ -53,6 +53,9 @@ class Player{
       down=false;
       w=w+1;
       if(w==100){
+       player.lives -=1;
+       s[0].rewind();
+       s[0].play();
        alive=true;
        cen.reset();
         pos2d.y=500;

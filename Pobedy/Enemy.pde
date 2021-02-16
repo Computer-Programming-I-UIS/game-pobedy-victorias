@@ -82,17 +82,15 @@ class callEnemy{
               if(enm[i][j].alive && player.alive){
                 enm[i][j].pos.x += enmspeed;
               }
-                if(enm[i][j].pos.y + enm[i][j].size > height - player.size*2 || enm[i][j].pos.y +enm[i][j].size == player.pos2d.y && enm[i][j].alive) {
-                    player.lives -=1;
+                if(enm[i][j].pos.y + enm[i][j].size > height - player.size*2 && player.alive && enm[i][j].alive || enm[i][j].pos.y +enm[i][j].size == player.pos2d.y && enm[i][j].alive && player.alive) { 
                     player.alive=false;
-                    s[0].rewind();
-                    s[0].play();
-                    player.pos2d.y-=1;
+                    print("-1  vida");
+                    
                     
                 }
                 
                 
-                if((enm[i][j].pos.x + enm[i][j].size > width-300 || enm[i][j].pos.x - enm[i][j].size < 0)) {
+                if((enm[i][j].pos.x + enm[i][j].size > width-300 && !borde || enm[i][j].pos.x - enm[i][j].size < 0 && !borde)) {
                     borde = true;
                 }
             }
@@ -105,6 +103,7 @@ class callEnemy{
             }
             enmspeed *= -1;
             pos.y += 15;
+            borde=false;
         }
         for(int i=0;i<enm.length;i++){
          for(int j=0;j<enm[i].length;j++){
@@ -118,12 +117,10 @@ class callEnemy{
               s[0].play();
             }else if(!bullet.tp && bullet.pos.y > player.pos2d.y && bullet.pos.y<player.pos2d.y+50 && bullet.pos.x >player.pos2d.x && bullet.pos.x <player.pos2d.x+50){
               bullets.remove(b);
-              player.lives -=1;
+              print("disparao");
               pos.x=0;
               pos.y=0;
               player.alive=false;
-              s[0].rewind();
-              s[0].play();
 
             }
          }

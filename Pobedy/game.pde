@@ -30,7 +30,7 @@ void gamePaused(){
   fill(#FFFFFF);
   rect(250,250,150,30);
   fill(0);
-  text("Victoria!", 300,20);
+  text("Victoria!", 300,270);
 }else if(!victory[level] && !gameover){
   btn[5].backplace(600,400,6, "Jugar");
 }else if(gameover){
