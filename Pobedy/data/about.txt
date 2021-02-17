@@ -1,10 +1,18 @@
-                                            Creditos:					
+                 
+                                           Controles:
+             Movimiento: 
+          - Desplazamiento hacia arriba con: w o ↑
+          - Desplazamiento hacia abajo con: s o ↓
+          - Desplazamiento hacia la derecha: d o →
+          - Desplazamiento hacia la izquierda: a o ←
+
+                                         Creditos:					
 
                                         Programacion:					
        Cristian de Jesus Chavez Choperena - 2182190 (CrisDejChav)
                                  Josser De Luque - 2190246 (jgio)
-
-                                             Diseño:
-Jack Knahr (Un amigo del colegio) - Diseño de todos los personajes
-
+                                             Diseño: 
+                                           
                                   Musica y Ambientacion:
+                                              Hitctrl
+
