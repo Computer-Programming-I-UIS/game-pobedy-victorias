@@ -1,13 +1,13 @@
-                 
-                                           Controles:
-             Movimiento: 
-          - Desplazamiento hacia arriba con: w o ↑
-          - Desplazamiento hacia abajo con: s o ↓
-          - Desplazamiento hacia la derecha: d o →
-          - Desplazamiento hacia la izquierda: a o ←
-
+                                         Historia:
+      Una nave que se enfrenta a una flota de naves enemigas.
+                                         Controles:
+          - Desplazamiento hacia arriba con: w, W o ↑
+          - Desplazamiento hacia abajo con: s, S o ↓
+          - Desplazamiento hacia la derecha: d, D o →
+          - Desplazamiento hacia la izquierda:  a, A o ←
+          - Disparo del proyectil:  Barra espaciadora
+          - Pausar: p o P
                                          Creditos:					
-
                                         Programacion:					
        Cristian de Jesus Chavez Choperena - 2182190 (CrisDejChav)
                                  Josser De Luque - 2190246 (jgio)
