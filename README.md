@@ -16,16 +16,16 @@ a sus amigos del malvado rector porras.
 
 ## **Objetivos**
 - [x] Interfaz de menú principal.
-- [ ] Elaborar minijuegos interactivos.
-- [ ] Historia para el personaje principal y los secundarios.
+- [x] Elaborar minijuegos interactivos.
+- [x] Historia para el personaje principal y los secundarios.
 - [ ] Agregar mas de 2 arcades.
 - [ ] ...
 
 ## **Funcionamiento**
 
-Teclas W,A,S,D y flechas direccionales para realizar movimiento.
+Teclas W,A,S,D y flechas direccionales para realizar movimiento. (1)
 Espacio para saltar (en algunos niveles).
-Espacio para disparar (en algunos niveles).
+Espacio para disparar (en algunos niveles). (1)
 
 
 

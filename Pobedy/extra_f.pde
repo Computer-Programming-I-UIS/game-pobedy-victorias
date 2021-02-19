@@ -1,27 +1,20 @@
-boolean mouseInLeftC(float x, float y, float dx, float dy){
- if(mouseX>x && mouseX<dx && mouseY>y && mouseY<dy && mousePressed && mouseButton == LEFT){
-  return true; 
- }else{
-  return false; 
- }
+boolean mouseInLeftC(float x, float y, float dx, float dy) {
+  if (mouseX>x && mouseX<dx && mouseY>y && mouseY<dy && mousePressed && mouseButton == LEFT) {
+    return true;
+  } else {
+    return false;
+  }
 }
-void mousePressed(){
-  
-  
-  
+void mousePressed() {
 }
-void mouseReleased(){
-  
-  
-  
+void mouseReleased() {
 }
-void presume(){
- if(canpresume && window == 4){
-   window = 1;
- }else if(canpresume && window ==1){
-  window = 4;
- }
-  
+void presume() {
+  if (canpresume && window == 4) {
+    window = 1;
+  } else if (canpresume && window ==1) {
+    window = 4;
+  }
 }
 class spriteAnim {
   PImage[] images;
@@ -39,9 +32,9 @@ class spriteAnim {
 
   void display(float xpos, float ypos) {
     frame = (frame+1) % cantidad;
-    image(images[frame], xpos, ypos,50,50);
+    image(images[frame], xpos, ypos, 50, 50);
   }
-  
+
   int imgsize() {
     return images[0].width;
   }
