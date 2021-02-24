@@ -33,6 +33,8 @@ void keyPressed() {
         presume();
         canpresume=false;
       }
+    }else if(level==2){
+     loadPressed(level); 
     }
   } else if (window == 4 && !victory[level] && !gameover) {
     switch(keyCode) {

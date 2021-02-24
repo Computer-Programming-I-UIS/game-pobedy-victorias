@@ -38,6 +38,16 @@ void prechargeGameplay() {
   autopos = new float[20][2];
   enm = new Enemy[enemy[0]][enemy[1]];
   bullets = new ArrayList<Bullet>(); 
+  plataformas = new platforms[6];
+  float pinicial[]={70,400};
+  for(int i=0;i<plataformas.length;i++){
+    if(i==0){
+     plataformas[i] = new platforms(pinicial[0],pinicial[1]); 
+    }else{
+     plataformas[i] = new platforms(pinicial[0]+50*i*sin(frameRate),pinicial[1]+50*i*sin(frameRate));  
+    }
+    
+  }
   for (int i=0; i<maxlevel; i++) {
     victory[i]=false;
   }

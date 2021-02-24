@@ -8,15 +8,17 @@ class Enemy {
     pos = new PVector(px, py);
   }
   void place() {
-    if (alive) {
-      image(en[enemysprite], pos.x, pos.y, size, size);
-    } else {
-      if (showdeath) {
-        anim.display(pos.x, pos.y);
+    if (level==1) {
+      if (alive) {
+        image(en[enemysprite], pos.x, pos.y, size, size);
+      } else {
+        if (showdeath) {
+          anim.display(pos.x, pos.y);
 
-        w=w+1;
-        if (w==30) {
-          showdeath=false;
+          w=w+1;
+          if (w==30) {
+            showdeath=false;
+          }
         }
       }
     }
@@ -82,8 +84,8 @@ class callEnemy {
 
         if ((enm[i][j].pos.x + enm[i][j].size > width-300 && !borde || enm[i][j].pos.x - enm[i][j].size < 0 && !borde)) {
           borde = true;
-        }else if(enm[i][j].pos.x + enm[i][j].size > width-299){
-         enm[i][j].pos.x+=-3;
+        } else if (enm[i][j].pos.x + enm[i][j].size > width-299) {
+          enm[i][j].pos.x+=-3;
         }
       }
     }

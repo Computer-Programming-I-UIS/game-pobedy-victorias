@@ -1,6 +1,6 @@
 class Player {
-  PVector pos2d;
-  boolean left=false, right=false, up=false, down=false, alive=true;
+  PVector pos2d, posv;
+  boolean left=false, right=false, up=false, down=false, alive=true, jumping=false, falling=false, floor=true;
   int vel2d=5;
   int w=0;
   int lives=1;
@@ -9,6 +9,7 @@ class Player {
   int status=0;
   Player() {
     pos2d = new PVector(375, 500);
+    posv = new PVector(375, 500);
   }
   void play() {
     if (level==1 && alive) {
@@ -21,6 +22,9 @@ class Player {
       } else {
         turbin[turbinid].display(player.pos2d.x, player.pos2d.y+50);
       }
+    }else if(level==2){
+      fill(0);
+     rect(posv.x,posv.y,20,20); 
     }
   }
   void moveh(int dir) {
@@ -40,6 +44,20 @@ class Player {
       movev(-1);
     } else if (down && pos2d.y<530) {
       movev(1);
+    }
+    if(posv.y==500){
+     floor=true; 
+    }
+    if(level==2){
+     if(falling && !jumping && !floor){
+      player.posv.y+=1; 
+     }else if (jumping && floor){
+       for(int i=0;i<10;i++){
+        posv.y-=1;
+        jumping=true;
+       }
+     }
+      
     }
     if (!alive) {
       anim.display(player.pos2d.x, player.pos2d.y);

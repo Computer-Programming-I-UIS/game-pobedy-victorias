@@ -9,6 +9,7 @@ float autopos[][];
 ArrayList<Bullet> bullets;
 PImage[] pl, en;
 spriteAnim anim;
+platforms[] plataformas;
 spriteAnim[] turbin;
 Minim minim;
 AudioPlayer[] s;
