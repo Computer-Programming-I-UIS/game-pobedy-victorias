@@ -4,7 +4,7 @@ import ddf.minim.*;
 
 int window = 0, level=1, maxlevel=3, b, ss, plsprite=1, frame, turbinid=1;
 int enemy[] ={6, 6};
-int defscore []={enemy[0]*enemy[1], 2*enemy[0]*enemy[1],3*enemy[0]*enemy[1]};
+int defscore []={enemy[0]*enemy[1], 2*enemy[0]*enemy[1], 3*enemy[0]*enemy[1]};
 float autopos[][];
 ArrayList<Bullet> bullets;
 PImage[] pl, en;

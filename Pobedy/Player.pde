@@ -54,12 +54,12 @@ class Player {
         s[0].rewind();
         s[0].play();
         alive=true;
-        if(level==1){
-        cen.reset();
-        }else if(level==2){
+        if (level==1) {
+          cen.reset();
+        } else if (level==2) {
           ce2.reset();
-        }else if(level==3){
-         ce3.reset(); 
+        } else if (level==3) {
+          ce3.reset();
         }
         pos2d.y=500;
         pos2d.x=175;

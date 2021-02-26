@@ -78,7 +78,7 @@ class mButton {
       fill(#FFFFFF);
       rect(x, y, 150, 30, 50, 50, 50, 50); 
       fill(0);
-      
+
       text(tx, x+10, y+20);
     } else {
       fill(#FFFFFF);
@@ -100,19 +100,18 @@ class mButton {
       } else if (bid==1) {
         window=2;
       } else if (bid==2) {
-        
+
         window=5;
       } else if (bid==3) {
         window=3;
       } else if (bid==4) {
-        if(window==0){
-        exit();
-        }else if(window!=0){
-         window=0; 
+        if (window==0) {
+          exit();
+        } else if (window!=0) {
+          window=0;
         }
-        
       } else if (bid==5) {
-        
+
         if (window!=4 && canclick) {
           almacenada=window;
           window=4;
@@ -126,7 +125,11 @@ class mButton {
       } else if (bid==999) {
         level=level+1; 
         window=1;
-        
+        if (level==2) {
+          ce2.reset();
+        } else if (level==3) {
+          ce3.reset();
+        }
         player.pos2d.x=375;
         player.pos2d.y=500;
       }

@@ -58,11 +58,11 @@ void mapdraw() {
     }
   } else if (level==2) {
     for (int i=1; i<20; i++) {
-        fill(0);
-        autopos[i][0]=random(20, 500);
-        autopos[i][1]=random(20, 580);
-        noStroke();
-        estrellita(autopos[i][0], autopos[i][1], 2, 2, 5);
+      fill(0);
+      autopos[i][0]=random(20, 500);
+      autopos[i][1]=random(20, 580);
+      noStroke();
+      estrellita(autopos[i][0], autopos[i][1], 2, 2, 5);
     }
   }
 }

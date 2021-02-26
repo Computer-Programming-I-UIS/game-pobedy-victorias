@@ -9,8 +9,7 @@ void loadGraphics() {
     authorsInfo();
   } else if (window==4) {
     gamePaused();
-  }else if(window==5){
-   tutorial(); 
-    
+  } else if (window==5) {
+    tutorial();
   }
 }

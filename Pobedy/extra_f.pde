@@ -39,14 +39,11 @@ class spriteAnim {
     return images[0].width;
   }
 }
-void loadPressed(int l){
- if(l==2){
-  switch(keyCode){
-   case ' ':
-     player.jumping=true;
-    
+void loadPressed(int l) {
+  if (l==2) {
+    switch(keyCode) {
+    case ' ':
+      player.jumping=true;
+    }
   }
-   
- }
-  
 }

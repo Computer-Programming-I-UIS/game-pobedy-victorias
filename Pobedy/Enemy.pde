@@ -9,18 +9,17 @@ class Enemy {
   }
   void place() {
 
-      if (alive) {
-        image(en[enemysprite], pos.x, pos.y, size, size);
-      } else {
-        if (showdeath) {
-          anim.display(pos.x, pos.y);
+    if (alive) {
+      image(en[enemysprite], pos.x, pos.y, size, size);
+    } else {
+      if (showdeath) {
+        anim.display(pos.x, pos.y);
 
-          w=w+1;
-          if (w==30) {
-            showdeath=false;
-          }
+        w=w+1;
+        if (w==30) {
+          showdeath=false;
         }
-      
+      }
     }
   }
   void shoot(float sr, float x, float y) {
@@ -81,7 +80,7 @@ class callEnemy {
     for (int i = 0; i < ent.length; i++) {
       for (int j = 0; j < ent[i].length; j++) {
         if (ent[i][j].alive && player.alive) {
-          ent[i][j].pos.x += entspeed;
+          ent[i][j].pos.x += entspeed*level;
         }
         if (ent[i][j].pos.y + ent[i][j].size > height - player.size*2 && player.alive && ent[i][j].alive || ent[i][j].pos.y +ent[i][j].size == player.pos2d.y && ent[i][j].alive && player.alive) { 
           player.alive=false;

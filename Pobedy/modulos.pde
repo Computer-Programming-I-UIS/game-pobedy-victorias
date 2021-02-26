@@ -40,7 +40,7 @@ void prechargeGameplay() {
   en2 = new Enemy[enemy[1]][enemy[0]];
   en3 = new Enemy[enemy[0]][enemy[1]];
   bullets = new ArrayList<Bullet>(); 
-    
+
 
   for (int i=0; i<maxlevel; i++) {
     victory[i]=false;
