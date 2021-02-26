@@ -11,23 +11,20 @@
 
 ### **Descripcion** 
 Version: 1.21
-Consiste en un batido de arcades mezclados con una historia en la que nuestro personaje principal debera sortear varios retos para llegar al jefe final y lograr así rescatar
-a sus amigos del malvado rector porras.
-
+Consiste en un juego de naves espaciales estilo arcade con una historia en la que nuestro nave principal debera emprender una travesia para enfrentar varias flotas enemigas en las cuales se incrementara la dificultad progresibamente hasta al llegar a la ultima flota enmiga y lograr así rescatar a sus amigos del malvado Dr.Barichara.
+## **Requisitos para jugar**
+- Descargar la siguiente libreria: minim.
+- tener 12 años o más.
 ## **To Do**
 - [x] Interfaz de menú principal.
 - [x] Elaborar minijuegos interactivos.
 - [x] Historia para el personaje principal y los secundarios.
-- [ ] Agregar mas de 2 arcades.
 - [ ] ...
 
 ## **Funcionamiento**
 
-Teclas W,A,S,D y flechas direccionales para realizar movimiento. (1)
-Espacio para saltar (en algunos niveles).
-Espacio para disparar (en algunos niveles). (1)
-
-
+Teclas W, A, S, D y flechas direccionales para realizar movimiento (←, →, ↓, ↑). 
+Espacio para disparar. 
 
 ## **Capturas**
 
