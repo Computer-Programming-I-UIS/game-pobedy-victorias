@@ -37,17 +37,11 @@ void prechargeGameplay() {
   victory = new boolean[maxlevel];
   autopos = new float[20][2];
   enm = new Enemy[enemy[0]][enemy[1]];
+  en2 = new Enemy[enemy[1]][enemy[0]];
+  en3 = new Enemy[enemy[0]][enemy[1]];
   bullets = new ArrayList<Bullet>(); 
-  plataformas = new platforms[6];
-  float pinicial[]={70,400};
-  for(int i=0;i<plataformas.length;i++){
-    if(i==0){
-     plataformas[i] = new platforms(pinicial[0],pinicial[1]); 
-    }else{
-     plataformas[i] = new platforms(pinicial[0]+50*i*sin(frameRate),pinicial[1]+50*i*sin(frameRate));  
-    }
     
-  }
+
   for (int i=0; i<maxlevel; i++) {
     victory[i]=false;
   }
@@ -58,9 +52,15 @@ void createEnemies() {
     for (int j=0; j<enemy[1]; j++) {
       enm[i][j] = new Enemy(50*(1+i), 50*(1+j)); 
       enm[i][j].alive = true;
+      en2[i][j] = new Enemy(50*(1+i), 50*(1+j)); 
+      en2[i][j].alive = true;
+      en3[i][j] = new Enemy(50*(1+i), 50*(1+j)); 
+      en3[i][j].alive = true;
     }
   } 
-  cen = new callEnemy();
+  cen = new callEnemy(0.051, enm, 1);
+  ce2 = new callEnemy(0.061, en2, 2);
+  ce3 = new callEnemy(0.071, en3, 3);
 }
 void prechargeSounds() {
   minim = new Minim(this);

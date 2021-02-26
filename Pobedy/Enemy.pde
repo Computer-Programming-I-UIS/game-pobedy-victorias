@@ -8,7 +8,7 @@ class Enemy {
     pos = new PVector(px, py);
   }
   void place() {
-    if (level==1) {
+
       if (alive) {
         image(en[enemysprite], pos.x, pos.y, size, size);
       } else {
@@ -20,11 +20,12 @@ class Enemy {
             showdeath=false;
           }
         }
-      }
+      
     }
   }
   void shoot(float sr, float x, float y) {
     if (random(0, 1) < sr ) {
+      print("a");
       bullets.add(new Bullet(x, y, false));
     }
   }
@@ -35,17 +36,22 @@ class Enemy {
   }
 }
 class callEnemy {
-  int enmspeed = 2, bajas=0;
+  int entspeed = 2, bajas=0;
   PVector pos;
-  float pr, prshoot=0.051;
-  callEnemy() {
+  Enemy[][] ent;
+  int debut;
+  float pr, prshoot=0.031;
+  callEnemy(float dif, Enemy[][] enz, int apar) {
     pos = new PVector(0, 0);
+    prshoot=dif;
+    ent = enz;
+    debut = apar;
   }
   void reset() {
     for (int i=0; i<enemy[0]; i++) {
       for (int j=0; j<enemy[1]; j++) {
-        enm[i][j].pos.x = 50*(1+i); 
-        enm[i][j].pos.y = 50*(1+j);
+        ent[i][j].pos.x = 50*(1+i); 
+        ent[i][j].pos.y = 50*(1+j);
       }
     }
     pos.x=0;
@@ -53,16 +59,16 @@ class callEnemy {
     bullets.clear();
   }
   void EnemyPlace() {
-    for (int i = 0; i < enm.length; i++) {
-      for (int j = 0; j < enm[i].length; j++) {
+    for (int i = 0; i < ent.length; i++) {
+      for (int j = 0; j < ent[i].length; j++) {
 
-        enm[i][j].place();
+        ent[i][j].place();
       }
     }
   }
   void update() {
     boolean borde = false;
-    pr = prshoot/(enemy[0]*enemy[1]-player.score);
+    pr = prshoot/(enemy[0]*enemy[1]-bajas*level);
 
     if (player.lives<=0) {
       window=4; // Game Over
@@ -70,42 +76,42 @@ class callEnemy {
     }
     if (player.score==defscore[level-1]) {
       window=4;
-      victory[level]=true;
+      victory[level-1]=true;
     }
-    for (int i = 0; i < enm.length; i++) {
-      for (int j = 0; j < enm[i].length; j++) {
-        if (enm[i][j].alive && player.alive) {
-          enm[i][j].pos.x += enmspeed;
+    for (int i = 0; i < ent.length; i++) {
+      for (int j = 0; j < ent[i].length; j++) {
+        if (ent[i][j].alive && player.alive) {
+          ent[i][j].pos.x += entspeed;
         }
-        if (enm[i][j].pos.y + enm[i][j].size > height - player.size*2 && player.alive && enm[i][j].alive || enm[i][j].pos.y +enm[i][j].size == player.pos2d.y && enm[i][j].alive && player.alive) { 
+        if (ent[i][j].pos.y + ent[i][j].size > height - player.size*2 && player.alive && ent[i][j].alive || ent[i][j].pos.y +ent[i][j].size == player.pos2d.y && ent[i][j].alive && player.alive) { 
           player.alive=false;
         }
 
 
-        if ((enm[i][j].pos.x + enm[i][j].size > width-300 && !borde || enm[i][j].pos.x - enm[i][j].size < 0 && !borde)) {
+        if ((ent[i][j].pos.x + ent[i][j].size > width-300 && !borde || ent[i][j].pos.x - ent[i][j].size < 0 && !borde)) {
           borde = true;
-        } else if (enm[i][j].pos.x + enm[i][j].size > width-299) {
-          enm[i][j].pos.x+=-3;
+        } else if (ent[i][j].pos.x + ent[i][j].size > width-299) {
+          ent[i][j].pos.x+=-3;
         }
       }
     }
     if (borde) {
-      for (int i = 0; i < enm.length; i++) {
-        for (int j = 0; j < enm[i].length; j++) {
-          enm[i][j].pos.y += enm[i][j].size;
+      for (int i = 0; i < ent.length; i++) {
+        for (int j = 0; j < ent[i].length; j++) {
+          ent[i][j].pos.y += ent[i][j].size;
         }
       }
-      enmspeed *= -1;
+      entspeed *= -1;
       pos.y += 15;
       borde=false;
     }
-    for (int i=0; i<enm.length; i++) {
-      for (int j=0; j<enm[i].length; j++) {
+    for (int i=0; i<ent.length; i++) {
+      for (int j=0; j<ent[i].length; j++) {
         for (b = bullets.size()-1; b >= 0; b--) {
           Bullet bullet = bullets.get(b);
-          if (bullet.tp &&bullet.pos.y > enm[i][j].pos.y && bullet.pos.y<enm[i][j].pos.y+15 && bullet.pos.x >enm[i][j].pos.x && bullet.pos.x <enm[i][j].pos.x+enm[i][j].size && enm[i][j].alive) {
+          if (bullet.tp &&bullet.pos.y > ent[i][j].pos.y && bullet.pos.y<ent[i][j].pos.y+15 && bullet.pos.x >ent[i][j].pos.x && bullet.pos.x <ent[i][j].pos.x+ent[i][j].size && ent[i][j].alive) {
             bullets.remove(b);
-            enm[i][j].alive = false;
+            ent[i][j].alive = false;
             player.score +=1;
             s[0].rewind();
             s[0].play();
@@ -120,10 +126,10 @@ class callEnemy {
     }
   }
   void disparar() {
-    for (int i = 0; i< enm.length; i++) {
-      for (int j = 0; j <enm[i].length; j++) {
-        if (enm[i][j].alive && player.alive) {
-          enm[i][j].shoot(pr, enm[i][j].pos.x, enm[i][j].pos.y+15);
+    for (int i = 0; i< ent.length; i++) {
+      for (int j = 0; j <ent[i].length; j++) {
+        if (ent[i][j].alive && player.alive) {
+          ent[i][j].shoot(pr, ent[i][j].pos.x, ent[i][j].pos.y+15);
         }
       }
     }

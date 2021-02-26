@@ -126,6 +126,9 @@ class mButton {
       } else if (bid==999) {
         level=level+1; 
         window=1;
+        
+        player.pos2d.x=375;
+        player.pos2d.y=500;
       }
     }
     if (mousePressed==false) {
