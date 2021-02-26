@@ -33,4 +33,4 @@ Espacio para disparar (en algunos niveles). (1)
 
 ![Menú](https://imgur.com/F0Uvd0P.png)
 ![Player-Selector](https://imgur.com/PppODYT.png)
-![In-game](https://imgur.com/Yatac2Z.png)
+![In-game](https://imgur.com/skgictI.png)
