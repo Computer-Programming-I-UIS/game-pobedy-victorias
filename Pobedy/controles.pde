@@ -1,7 +1,7 @@
 void keyPressed() {
 
   if (window == 1 && player.alive) {
-    if (player.status ==0 && level==1) {
+    if (player.status ==0) {
       switch(keyCode) {
       case 'w':
       case UP:
@@ -36,7 +36,7 @@ void keyPressed() {
     }else if(level==2){
      loadPressed(level); 
     }
-  } else if (window == 4 && !victory[level] && !gameover) {
+  } else if (window == 4 && !victory[level-1] && !gameover) {
     switch(keyCode) {
     case 'P':
     case 'p':

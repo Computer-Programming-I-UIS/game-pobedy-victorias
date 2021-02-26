@@ -5,9 +5,9 @@ void loadGamePlay() {
 }
 void gamePaused() {
   btn[4].backplace(600, 200, 4, "Menú");
-  if (victory[level] && level<maxlevel) {
+  if (victory[level-1] && level<maxlevel) {
     callvictory();
-  } else if (!victory[level] && !gameover) {
+  } else if (!victory[level-1] && !gameover) {
     btn[5].backplace(600, 400, 6, "Jugar");
   } else if (gameover) {
     fill(#FFFFFF);
@@ -57,6 +57,13 @@ void mapdraw() {
       }
     }
   } else if (level==2) {
+    for (int i=1; i<20; i++) {
+        fill(0);
+        autopos[i][0]=random(20, 500);
+        autopos[i][1]=random(20, 580);
+        noStroke();
+        estrellita(autopos[i][0], autopos[i][1], 2, 2, 5);
+    }
   }
 }
 
@@ -78,7 +85,7 @@ void mapborders() {
   fill(0);
   rect(0, 0, 20, 600);
   rect(780, 0, 20, 600);
-  
+
   rect(0, 580, 800, 20);
   if (window==4) {
     rect(500, 0, 800, 20);
@@ -103,7 +110,7 @@ void loadGameDecorators() {
   btn[4].backplace(600, 200, 4, "Menú");
 }
 void callvictory() {
-  if (level==1) {
+  if (victory[level-1]) {
     background(#102074);
     loadGameDecorators();
     player.play();
@@ -119,6 +126,9 @@ void callvictory() {
     } else if (player.pos2d.y<0) {
       fill(#FFFFFF);
       rect(250, 250, 150, 30);
+      for (b = bullets.size()-1; b >= 0; b--) {
+        Bullet bullet = bullets.remove(b);
+      }
       fill(0);
       text("Victoria!", 300, 270);
       btn[5].backplace(320, 400, 999, "Siguiente Nivel");

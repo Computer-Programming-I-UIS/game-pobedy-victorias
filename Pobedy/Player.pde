@@ -9,10 +9,9 @@ class Player {
   int status=0;
   Player() {
     pos2d = new PVector(375, 500);
-    posv = new PVector(375, 500);
   }
   void play() {
-    if (level==1 && alive) {
+    if (alive) {
       image(pl[plsprite], pos2d.x, pos2d.y, 50, 64.28);
       if (plsprite==1) {
         turbin[turbinid].display(player.pos2d.x, player.pos2d.y+25);
@@ -22,9 +21,6 @@ class Player {
       } else {
         turbin[turbinid].display(player.pos2d.x, player.pos2d.y+50);
       }
-    }else if(level==2){
-      fill(0);
-     rect(posv.x,posv.y,20,20); 
     }
   }
   void moveh(int dir) {
@@ -45,20 +41,7 @@ class Player {
     } else if (down && pos2d.y<530) {
       movev(1);
     }
-    if(posv.y==500){
-     floor=true; 
-    }
-    if(level==2){
-     if(falling && !jumping && !floor){
-      player.posv.y+=1; 
-     }else if (jumping && floor){
-       for(int i=0;i<10;i++){
-        posv.y-=1;
-        jumping=true;
-       }
-     }
-      
-    }
+
     if (!alive) {
       anim.display(player.pos2d.x, player.pos2d.y);
       left=false;
@@ -71,7 +54,13 @@ class Player {
         s[0].rewind();
         s[0].play();
         alive=true;
+        if(level==1){
         cen.reset();
+        }else if(level==2){
+          ce2.reset();
+        }else if(level==3){
+         ce3.reset(); 
+        }
         pos2d.y=500;
         pos2d.x=175;
       }
