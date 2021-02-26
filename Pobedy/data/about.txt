@@ -1,5 +1,9 @@
                                          Historia:
-      Una nave que se enfrenta a una flota de naves enemigas.
+Consiste en un juego de naves espaciales estilo arcade con una historia
+en la que nuestro nave principal debera emprender una travesia 
+para enfrentar varias flotas enemigas en las cuales se incrementara 
+la dificultad progresibamente hasta al llegar a la ultima flota enmiga y 
+lograr así rescatar a sus amigos del malvado Dr.Barichara.
 
                                          Creditos:					
                                         Programacion:					
