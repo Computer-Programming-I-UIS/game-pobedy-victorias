@@ -121,7 +121,7 @@ void callvictory() {
       rect(250, 250, 150, 30);
       fill(0);
       text("Victoria!", 300, 270);
-      btn[5].backplace(320, 400, 999, "Siguiete Nivel");
+      btn[5].backplace(320, 400, 999, "Siguiente Nivel");
     }
   }
 }

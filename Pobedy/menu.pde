@@ -13,14 +13,14 @@ void loadLogo() {
   image(menup, 0, 0);
 }
 void menuButtons() {
-  for (int i=0; i<4; i++) {
-    btn[i].load(350, 200+100*i);
+  for (int i=0; i<5; i++) {
+    btn[i].load(350, 200+80*i);
   }
 }
 class mButton {
   boolean canclick =true;
   PVector pos;
-  String btntxt[] = {"Jugar", "Config", "Creditos", "Salir", "Volver", "Pause", "Play"};
+  String btntxt[] = {"Jugar", "Config", "Tutorial", "Creditos", "Salir", "Volver", "Pause", "Play"};
   int bid;
   int almacenada=1;
   boolean image=false;
@@ -52,7 +52,7 @@ class mButton {
     fill(#FFFFFF);
     rect(pos.x, pos.y, 100, 30, 50, 50, 50, 50); 
     fill(0);
-    text(btntxt[bid], pos.x+30, pos.y+20);
+    text(btntxt[bid], pos.x+20, pos.y+20);
   }
   void visualPlace() {
     if (plsprite==bid) {
@@ -73,17 +73,18 @@ class mButton {
   void backplace(int x, int y, int id, String tx) {
     fill(#FFFFFF);
 
-
+    textSize(15);
     if (id==999) {
       fill(#FFFFFF);
       rect(x, y, 150, 30, 50, 50, 50, 50); 
       fill(0);
-      text(tx, x+20, y+20);
+      
+      text(tx, x+10, y+20);
     } else {
       fill(#FFFFFF);
       rect(x, y, 100, 30, 50, 50, 50, 50); 
       fill(0);
-      text(tx, x+30, y+20);
+      text(tx, x+20, y+20);
     }
 
     pos.x=x;
@@ -99,19 +100,26 @@ class mButton {
       } else if (bid==1) {
         window=2;
       } else if (bid==2) {
-        window=3;
+        
+        window=5;
       } else if (bid==3) {
-        exit();
+        window=3;
       } else if (bid==4) {
-        window=0;
-      } else if (bid==5 && canclick) {
-        if (window!=4) {
+        if(window==0){
+        exit();
+        }else if(window!=0){
+         window=0; 
+        }
+        
+      } else if (bid==5) {
+        
+        if (window!=4 && canclick) {
           almacenada=window;
           window=4;
           canclick=false;
         }
-      } else if (bid==6 && canclick) {
-        if (window==4) {
+      } else if (bid==6) {
+        if (window==4 && canclick) {
           window=almacenada;
           canclick=false;
         }

@@ -31,5 +31,6 @@ void setup() {
 }
 
 void draw() {
+  textSize(15);
   loadGraphics();
 }

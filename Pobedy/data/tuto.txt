@@ -1,0 +1,8 @@
+
+                                         Controles:
+          - Desplazamiento hacia arriba con: w, W o ↑
+          - Desplazamiento hacia abajo con: s, S o ↓
+          - Desplazamiento hacia la derecha: d, D o →
+          - Desplazamiento hacia la izquierda:  a, A o ←
+          - Disparo del proyectil:  Barra espaciadora
+          - Pausar: p o P
