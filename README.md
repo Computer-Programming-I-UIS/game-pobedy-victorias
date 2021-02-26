@@ -31,7 +31,6 @@ Espacio para disparar (en algunos niveles). (1)
 
 ## **Capturas**
 
-![Menú Principal](https://photos.google.com/photo/AF1QipOGI5WoQDCUKi_DJRoN_ahsVtEEO-mv78dJEtDa)
-![Player Selector](https://photos.google.com/photo/AF1QipMozlgl9Qo5iocCNmQv4nSI8LjcDz87ZpiRzCmA)
-![Ingame](https://photos.google.com/photo/AF1QipNB8-vSHXB_CH4iIOlWwmfveIjm5L2jkBV0y-Z0)
-
+![Menú Principal](https://ibb.co/XXyss0G)
+![Player Selector](https://ibb.co/9Tr5ZfX)
+![Ingame](https://ibb.co/dQN1gVv)
